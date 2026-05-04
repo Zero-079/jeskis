@@ -1,76 +1,178 @@
 import type { GameData } from '../types';
 
 export const gameData: GameData = {
-  hero: {
+hero: {
     title: 'Jeskis',
-    subtitle: 'A Tale of Shadows & Steel',
-    tagline: 'Forge your legend in a crumbling kingdom where every choice echoes through eternity.',
-    ctaText: 'Enter the Realm',
+    subtitle: 'Un mundo oscuro entre humo, hierro y risas rotas',
+    tagline: 'Adéntrate en una ciudad surrealista de la era industrial y recorre sus ruinas con un bufón trágico que nunca debió sobrevivir',
+    ctaText: 'Entrar al Reino',
     ctaHref: '#about',
   },
 
   about: {
-    title: 'The Kingdom Awaits',
+    title: 'Una ciudad que crea monstruos',
     description:
-      'In the twilight age of the Fifth Era, the once-great Kingdom of Valdris lies in ruin. ' +
-      'The Iron Throne sits empty, watched over by the hollow eyes of dead kings. ' +
-      'Now, from the shadows of forgotten taverns and the torch-lit halls of exiled lords, ' +
-      'a new power rises—will you be the one to reclaim the throne, or let the darkness consume all?',
+      'Jeski no es un héroe, y la ciudad que recorre tampoco busca redención. ' +
+      'Alguna vez fue parte de su espectáculo; ahora regresa transformado por la pérdida, la furia y una oscuridad que ya no puede ocultar. ',
     lore:
-      'Centuries before the fall, the Jeskis—warriors bound by ancient blood oaths—were ' +
-      'the kingdom\'s first defenders. Their rituals forbidden, their names erased from history. ' +
-      'But the old stones remember, and the blood remembers too. The time of the Jeskis has come again.',
+      'Ambientado en una ciudad decadente donde fábricas humeantes, torres medievales y callejones enfermos conviven bajo un mismo cielo de ceniza,'
+      + 'Jeskis es un metroidvania oscuro y surreal sobre duelo, violencia y memoria rota. Cada distrito, cada puerta sellada y cada atajo olvidado'
+      + 'acerca a Jeski a la verdad detrás de la tragedia que lo convirtió en algo más temido que humano.',
   },
 
   features: [
     {
-      id: 'combat',
+      id: 'exploration',
       icon: 'sword',
-      title: 'Blade & Bond',
+      title: 'Exploración metroidvania',
       description:
-        'Master the art of steel through a deep combat system that rewards patience, precision, and cunning. ' +
-        'Every swing tells a story—every parry a poem.',
+        'Recorre una ciudad interconectada repletea de rutas ocultas, puertas selladas y ' +
+        'caminos que solo se abren cuando descubres nuevas habilidades.',
     },
     {
-      id: 'factions',
+      id: 'prota',
       icon: 'crown',
-      title: 'Factions of Fate',
+      title: 'Un protagonista oscuro',
       description:
-        'Choose your allegiance among warring houses, mysterious cults, and forgotten orders. ' +
-        'Your allegiances shape the world—and the world remembers.',
+        'Juega como Jeski, un bufón trágico y violenta cuya historia se mueve entre el dolor, ' +
+        'la obsesión y la necesidad de descubrir la verdad.',
     },
     {
-      id: 'crafting',
+      id: 'combat',
       icon: 'anvil',
-      title: 'The Artisan\'s Path',
+      title: 'Combate ágil y brutal',
       description:
-        'Forged in fire, tempered in blood. Craft legendary weapons, brew elixirs of power, ' +
-        'and bind your soul to the steel you create.',
-    },
-    {
-      id: 'shadows',
-      icon: 'eye',
-      title: 'Whispers in the Dark',
-      description:
-        'A shadow network woven into every corner of the kingdom. Gather secrets, ' +
-        'uncover conspiracies, and become the whisper that topples empires.',
-    },
-    {
-      id: 'consequences',
-      icon: 'scale',
-      title: 'The Weight of Choices',
-      description:
-        'No deed goes unrecorded. The people remember your mercy—and your cruelty. ' +
-        'Build your legacy, or watch it crumble to ash.',
+        'Salta, esquiva y ataca con precisión en enfrentamientos que mezclan movilidad, ritmo y peligro constante.',
     },
     {
       id: 'world',
-      icon: 'castle',
-      title: 'A Living Kingdom',
+      icon: 'eye',
+      title: 'Mundo surrealista',
       description:
-        'From the fog-shrouded coasts to the burning plains, every corner breathes with ' +
-        'history, danger, and opportunity. Explore, or conquer.',
+        'Explora una ciudad donde la arquitectura medieval y la maquinaria industrial conviven con pesadillas, ' +
+        'símbolos rotos y escenarios imposibles.',
     },
+    {
+      id: 'envioroment',
+      icon: 'scale',
+      title: 'Narrativa ambiental',
+      description:
+        'Descubre la historia a través de escenarios, ruinas, objetos y fragmentos del pasado dispersos por cada distrito.',
+    },
+    {
+      id: 'secrets',
+      icon: 'castle',
+      title: 'Secretos y memoria rota',
+      description:
+        'Vuelve sobre tus pasos, abre nuevos accesos y desentierra lo que la ciudad intentó ocultar bajo hierro, ceniza y sangre.',
+    },
+  ],
+
+  screenshots: [
+    {
+      id: 'screenshot-1',
+      src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=450&fit=crop',
+      alt: 'Ruinas del Castillo Blackmere al atardecer',
+      caption: 'Las Ruinas de Blackmere',
+    },
+    {
+      id: 'screenshot-2',
+      src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&h=450&fit=crop',
+      alt: 'Armadura y armas medievales',
+      caption: 'La Armería de los Reyes Caídos',
+    },
+    {
+      id: 'screenshot-3',
+      src: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&h=450&fit=crop',
+      alt: 'Camino forestado neblinoso',
+      caption: 'Los Bosques Susurrantes',
+    },
+    {
+      id: 'screenshot-4',
+      src: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&h=450&fit=crop',
+      alt: 'Sala del trono medieval',
+      caption: 'El Trono Vacío',
+    },
+    {
+      id: 'screenshot-5',
+      src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop',
+      alt: 'Fortaleza montana al amanecer',
+      caption: 'El Nido del Águila',
+    },
+    {
+      id: 'screenshot-6',
+      src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=450&fit=crop',
+      alt: 'Campo de batalla nevado',
+      caption: 'Los Campos Helados',
+    },
+  ],
+
+  team: [
+    {
+      id: 'team-1',
+      name: 'El Arquitecto',
+      role: 'Director del Juego',
+      description: 'Arquitecto de mundos, tejedor de destinos.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Architect&backgroundColor=722f37&textColor=f5e6c8',
+    },
+    {
+      id: 'team-2',
+      name: 'El Artesano',
+      role: 'Director de Diseño',
+      description: 'Forjando mecánica desde el caos.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Artisan&backgroundColor=722f37&textColor=f5e6c8',
+    },
+    {
+      id: 'team-3',
+      name: 'El Cronista',
+      role: 'Director Narrativo',
+      description: 'Guardián de historias por contar.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Chronicler&backgroundColor=722f37&textColor=f5e6c8',
+    },
+    {
+      id: 'team-4',
+      name: 'El Herrero',
+      role: 'Director Técnico',
+      description: 'Golpeando código con precisión.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Smith&backgroundColor=722f37&textColor=f5e6c8',
+    },
+    {
+      id: 'team-5',
+      name: 'El Bardo',
+      role: 'Director de Arte',
+      description: 'Pintando relatos en sombra y luz.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Bard&backgroundColor=722f37&textColor=f5e6c8',
+    },
+    {
+      id: 'team-6',
+      name: 'El Alquimista',
+      role: 'Diseño de Sonido',
+      description: 'Destilando sonidos desde el vacío.',
+      avatarUrl: 'https://api.dicebear.com/7.x/initials/svg?seed=Alchemist&backgroundColor=722f37&textColor=f5e6c8',
+    },
+  ],
+
+  cta: {
+    headline: 'Tu Leyenda Comienza Ahora',
+    subheadline:
+      'Únete a la hermandad de los primeros Jeskis. Séamong los primeros en reclamar tu trono.',
+    buttonText: 'Unirse a la Orden',
+    buttonHref: '#',
+  },
+
+  nav: [
+    { label: 'Historia', href: '#about' },
+    { label: 'Características', href: '#features' },
+    { label: 'Galería', href: '#gallery' },
+    { label: 'La Orden', href: '#team' },
+    { label: 'Únete', href: '#cta' },
+  ],
+
+  socials: [
+    { platform: 'bluesky', url: 'https://bsky.app/profile/jeskis.game', iconId: 'bluesky' },
+    { platform: 'discord', url: 'https://discord.gg/jeskis', iconId: 'discord' },
+    { platform: 'github', url: 'https://github.com/jeskis', iconId: 'github' },
+    { platform: 'x', url: 'https://x.com/jeskisgame', iconId: 'x' },
   ],
 
   screenshots: [

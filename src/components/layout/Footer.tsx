@@ -20,7 +20,7 @@ const SOCIAL_ICONS: Record<string, string> = {
 export function Footer({
   socialLinks,
   gameTitle = 'Jeskis',
-  tagline = 'A Tale of Shadows & Steel',
+  tagline = 'Un relato de sombras y acero',
 }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
@@ -84,10 +84,10 @@ export function Footer({
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-stone-500 text-xs">
-              © {currentYear} {gameTitle}. All rights reserved.
+              © {currentYear} {gameTitle}. Todos los derechos reservados.
             </p>
             <p className="text-stone-600 text-xs mt-1">
-              Crafted with steel and shadow.
+              Forjado con acero y sombras.
             </p>
           </div>
         </div>

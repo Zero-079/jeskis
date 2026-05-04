@@ -122,8 +122,8 @@ export function Gallery() {
 
       <Container className="relative">
         <SectionTitle
-          title="Glimpses of the Realm"
-          subtitle="Witness the shadows and steel that await your arrival"
+          title="Destellos del Reino"
+          subtitle="Contempla las sombras y el acero que esperan tu llegada"
         />
 
         {/* Gallery grid */}

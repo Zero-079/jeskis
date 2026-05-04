@@ -112,7 +112,7 @@ const CTA = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 rounded-full border border-stone-600 hover:border-gold-500/50 bg-stone-900/50 hover:bg-stone-800/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,168,83,0.2)]"
-                aria-label={`Visit our ${social.platform} page`}
+                aria-label={`Visita nuestra página de ${social.platform}`}
               >
                 {/* Social icons - medieval styled shields/symbols */}
                 {social.platform === 'bluesky' && (

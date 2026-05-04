@@ -82,7 +82,7 @@ export function Navbar({ navItems }: NavbarProps) {
             type="button"
             className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isMobileMenuOpen}
           >
             <span

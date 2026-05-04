@@ -21,8 +21,8 @@ const Team = () => {
 
       <Container>
         <SectionTitle
-          title="The Order of Jeskis"
-          subtitle="Meet the guild forging your legend"
+          title="La Orden de Jeskis"
+          subtitle="Conoce a la hermandad que forja tu leyenda"
         />
 
         {/* Team Grid */}
