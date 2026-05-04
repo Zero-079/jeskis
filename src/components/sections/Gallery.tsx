@@ -4,6 +4,94 @@ import { screenshots } from '../../data/gameData';
 import type { Screenshot } from '../../types';
 
 /**
+ * Lightbox modal for viewing gallery images fullscreen.
+ */
+function Lightbox({
+  isOpen,
+  image,
+  onClose,
+  onNext,
+  onPrev,
+}: {
+  isOpen: boolean;
+  image: Screenshot | null;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}) {
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'ArrowLeft') onPrev();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose, onNext, onPrev]);
+
+  if (!isOpen || !image) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      {/* Close button */}
+      <button
+        className="absolute top-4 right-4 text-stone-400 hover:text-gold-400 transition-colors z-10"
+        onClick={onClose}
+      >
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/* Previous button */}
+      <button
+        className="absolute left-4 text-stone-400 hover:text-gold-400 transition-colors"
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
+      >
+        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* Next button */}
+      <button
+        className="absolute right-4 text-stone-400 hover:text-gold-400 transition-colors"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+      >
+        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Image */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="max-w-[90vw] max-h-[90vh] object-contain"
+        onClick={(e) => e.stopPropagation()}
+      />
+
+      {/* Caption */}
+      <div className="absolute bottom-8 left-0 right-0 text-center">
+        <p className="text-gold-400 font-heading text-lg tracking-wide text-shadow-gold">
+          {image.caption || image.alt}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/**
  * Generates a medieval-themed CSS gradient pattern for placeholder images.
  * Each screenshot gets a unique gradient combination.
  */
@@ -44,12 +132,24 @@ function PatternOverlay({ index }: { index: number }) {
 /**
  * Individual gallery item with ornate medieval frame.
  * Uses CSS gradient placeholder with caption overlay on hover.
+ * Click opens lightbox.
  */
-function GalleryItem({ screenshot, index }: { screenshot: Screenshot; index: number }) {
+function GalleryItem({
+  screenshot,
+  index,
+  onClick,
+}: {
+  screenshot: Screenshot;
+  index: number;
+  onClick: () => void;
+}) {
   const [imgError, setImgError] = React.useState(false);
 
   return (
-    <div className="group relative overflow-hidden rounded-lg">
+    <div
+      className="group relative overflow-hidden rounded-lg cursor-pointer"
+      onClick={onClick}
+    >
       {/* Ornate medieval frame - outer border */}
       <div className="absolute inset-0 border-2 border-stone-700 rounded-lg pointer-events-none z-10 group-hover:border-gold-500/40 transition-colors duration-300" />
 
@@ -126,8 +226,22 @@ function GalleryItem({ screenshot, index }: { screenshot: Screenshot; index: num
 /**
  * Gallery section displaying game screenshots with ornate medieval frames.
  * Uses CSS gradient placeholders with caption overlay on hover.
+ * Click on any image opens the lightbox.
  */
 export function Gallery() {
+  const [lightboxOpen, setLightboxOpen] = React.useState(false);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const nextImage = () => setCurrentIndex((prev) => (prev + 1) % screenshots.length);
+  const prevImage = () => setCurrentIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+
   return (
     <section id="gallery" className="py-20 bg-stone-900 relative">
       {/* Background texture */}
@@ -147,10 +261,24 @@ export function Gallery() {
         {/* Gallery grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {screenshots.map((screenshot, index) => (
-            <GalleryItem key={screenshot.id} screenshot={screenshot} index={index} />
+            <GalleryItem
+              key={screenshot.id}
+              screenshot={screenshot}
+              index={index}
+              onClick={() => openLightbox(index)}
+            />
           ))}
         </div>
       </Container>
+
+      {/* Lightbox modal */}
+      <Lightbox
+        isOpen={lightboxOpen}
+        image={lightboxOpen ? screenshots[currentIndex] : null}
+        onClose={closeLightbox}
+        onNext={nextImage}
+        onPrev={prevImage}
+      />
     </section>
   );
 }
