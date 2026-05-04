@@ -1,18 +1,18 @@
 import { Container, SectionTitle } from '../layout';
 import { features } from '../../data/gameData';
 import type { Feature } from '../../types';
-import { Map, VenetianMask, Sword, Castle, Book, Key } from 'lucide-react';
+import { FaMap, FaTheaterMasks, FaCrosshairs, FaFortAwesome, FaBook, FaKey } from 'react-icons/fa';
 
 /**
  * Icon mapping for features
  */
 const iconMap: Record<string, React.ReactNode> = {
-  exploration: <Map className="w-10 h-10" />,
-  prota: <VenetianMask className="w-10 h-10" />,
-  combat: <Sword className="w-10 h-10" />,
-  world: <Castle className="w-10 h-10" />,
-  envioroment: <Book className="w-10 h-10" />,
-  secrets: <Key className="w-10 h-10" />,
+  exploration: <FaMap className="w-10 h-10" />,
+  prota: <FaTheaterMasks className="w-10 h-10" />,
+  combat: <FaCrosshairs className="w-10 h-10" />,
+  world: <FaFortAwesome className="w-10 h-10" />,
+  envioroment: <FaBook className="w-10 h-10" />,
+  secrets: <FaKey className="w-10 h-10" />,
 };
 
 /**
