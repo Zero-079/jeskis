@@ -1,7 +1,7 @@
 import { ctaData, socialLinks } from '../../data/gameData';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
-import { FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 const CTA = () => {
   return (
@@ -122,8 +122,10 @@ const CTA = () => {
                 {social.platform === 'github' && (
                   <FaGithub className="w-5 h-5 text-stone-400 group-hover:text-gold-400 transition-colors" />
                 )}
-                {social.platform === 'instagram' && (
-                  <FaInstagram className="w-5 h-5 text-stone-400 group-hover:text-gold-400 transition-colors" />
+                {social.platform === 'x' && (
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-stone-400 group-hover:text-gold-400 transition-colors" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
                 )}
               </a>
             ))}

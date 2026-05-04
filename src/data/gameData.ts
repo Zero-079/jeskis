@@ -71,37 +71,37 @@ features: [
   screenshots: [
     {
       id: 'screenshot-1',
-      src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777936800/WhatsApp_Image_2026-05-04_at_2.19.16_PM_h1kcd7.jpg',
       alt: 'Ruinas del Castillo Blackmere al atardecer',
       caption: 'Las Ruinas de Blackmere',
     },
     {
       id: 'screenshot-2',
-      src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777937059/WhatsApp_Image_2026-05-04_at_2.19.16_PM_1_lgc5qh.jpg',
       alt: 'Armadura y armas medievales',
       caption: 'La Armería de los Reyes Caídos',
     },
     {
       id: 'screenshot-3',
-      src: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777937064/WhatsApp_Image_2026-05-04_at_2.19.16_PM_2_pj4e2v.jpg',
       alt: 'Camino forestado neblinoso',
       caption: 'Los Bosques Susurrantes',
     },
     {
       id: 'screenshot-4',
-      src: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777937175/WhatsApp_Image_2026-05-04_at_2.09.04_PM_agynjz.jpg',
       alt: 'Sala del trono medieval',
       caption: 'El Trono Vacío',
     },
     {
       id: 'screenshot-5',
-      src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777937176/WhatsApp_Image_2026-05-04_at_2.09.04_PM_2_lwbbwu.jpg',
       alt: 'Fortaleza montana al amanecer',
       caption: 'El Nido del Águila',
     },
     {
       id: 'screenshot-6',
-      src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=450&fit=crop',
+      src: 'https://res.cloudinary.com/dizwnyqfy/image/upload/v1777937176/WhatsApp_Image_2026-05-04_at_2.09.04_PM_1_aeenfq.jpg',
       alt: 'Campo de batalla nevado',
       caption: 'Los Campos Helados',
     },
@@ -169,9 +169,9 @@ features: [
   ],
 
   socials: [
-    { platform: 'discord', url: 'https://discord.gg/jeskis', iconId: 'discord' },
-    { platform: 'github', url: 'https://github.com/jeskis', iconId: 'github' },
-    { platform: 'instagram', url: 'https://instagram.com/jeskisgame', iconId: 'instagram' },
+    { platform: 'discord', url: 'https://discord.gg/hRyhUkDxv', iconId: 'discord' },
+    { platform: 'github', url: 'https://github.com/Zero-079/jeskis', iconId: 'github' },
+    { platform: 'x', url: 'https://x.com/Jeskis22', iconId: 'x' },
   ],
 };
 

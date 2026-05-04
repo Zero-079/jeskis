@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, SectionTitle } from '../layout';
 import { screenshots } from '../../data/gameData';
 import type { Screenshot } from '../../types';
@@ -45,6 +46,8 @@ function PatternOverlay({ index }: { index: number }) {
  * Uses CSS gradient placeholder with caption overlay on hover.
  */
 function GalleryItem({ screenshot, index }: { screenshot: Screenshot; index: number }) {
+  const [imgError, setImgError] = React.useState(false);
+
   return (
     <div className="group relative overflow-hidden rounded-lg">
       {/* Ornate medieval frame - outer border */}
@@ -59,35 +62,50 @@ function GalleryItem({ screenshot, index }: { screenshot: Screenshot; index: num
       <div className="absolute bottom-2 left-2 w-6 h-6 border-b border-l border-gold-500/0 group-hover:border-gold-500/60 transition-all duration-300 rounded-bl-sm z-20" />
       <div className="absolute bottom-2 right-2 w-6 h-6 border-b border-r border-gold-500/0 group-hover:border-gold-500/60 transition-all duration-300 rounded-br-sm z-20" />
 
-      {/* Image placeholder with gradient */}
+      {/* Image container */}
       <div
         className="aspect-video relative overflow-hidden"
-        style={{ background: getGradientPlaceholder(index) }}
+        style={{ background: !imgError ? undefined : getGradientPlaceholder(index) }}
       >
-        {/* Decorative pattern overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: PatternOverlay({ index }) }}
-        />
+        {/* Actual image - fallback to placeholder on error */}
+        {!imgError && (
+          <img
+            src={screenshot.src}
+            alt={screenshot.alt}
+            className="w-full h-full object-cover"
+            onError={() => setImgError(true)}
+          />
+        )}
 
-        {/* Subtle fog effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent" />
-
-        {/* Placeholder icon - decorative medieval motif */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg
-            viewBox="0 0 24 24"
-            className="w-16 h-16 text-stone-700/30 group-hover:scale-110 group-hover:text-gold-500/20 transition-all duration-500"
-          >
-            <path
-              d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"
-              stroke="currentColor"
-              strokeWidth="1"
-              fill="none"
-              opacity="0.5"
+        {/* Placeholder fallback - shown when image fails to load */}
+        {imgError && (
+          <>
+            {/* Decorative pattern overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: PatternOverlay({ index }) }}
             />
-          </svg>
-        </div>
+
+            {/* Subtle fog effect */}
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent" />
+
+            {/* Placeholder icon - decorative medieval motif */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg
+                viewBox="0 0 24 24"
+                className="w-16 h-16 text-stone-700/30 group-hover:scale-110 group-hover:text-gold-500/20 transition-all duration-500"
+              >
+                <path
+                  d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+          </>
+        )}
 
         {/* Caption overlay - appears on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
