@@ -1,138 +1,18 @@
 import { Container, SectionTitle } from '../layout';
 import { features } from '../../data/gameData';
 import type { Feature } from '../../types';
+import { Map, VenetianMask, Sword, Castle, Book, Key } from 'lucide-react';
 
 /**
- * Medieval icon mapping - inline SVG icons for each feature type
+ * Icon mapping for features
  */
 const iconMap: Record<string, React.ReactNode> = {
-  sword: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <path
-        d="M6.5 17.5L17.5 6.5M14 4.5L19.5 10M4.5 14L10 19.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M15.5 8.5L8.5 15.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  ),
-  crown: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <path
-        d="M2 17L4 7L8 10L12 5L16 10L20 7L22 17H2Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 5V9"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  ),
-  anvil: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <path
-        d="M3 16L6 10L18 10L21 16H3Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6 10V7C6 5.5 7.5 4 9 4H15C16.5 4 18 5.5 18 7V10"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M8 16H16"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  ),
-  eye: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
-  ),
-  scale: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <path
-        d="M12 3V5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M5 5L7 3"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M19 5L17 3"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12 5V17"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M4 10L9 17H15L20 10"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
-  castle: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      <path
-        d="M4 20H20V14L16 10L12 14L8 10L4 14V20Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 20V16"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M16 20V16"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12 10V6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <rect x="10" y="14" width="4" height="6" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  ),
+  exploration: <Map className="w-10 h-10" />,
+  prota: <VenetianMask className="w-10 h-10" />,
+  combat: <Sword className="w-10 h-10" />,
+  world: <Castle className="w-10 h-10" />,
+  envioroment: <Book className="w-10 h-10" />,
+  secrets: <Key className="w-10 h-10" />,
 };
 
 /**
@@ -187,8 +67,8 @@ export function Features() {
 
       <Container className="relative">
         <SectionTitle
-          title="The Path of the Jeskis"
-          subtitle="Six pillars of power await those brave enough to seize them"
+          title="El Camino de los Jeskis"
+          subtitle="Seis pilares de poder esperan a los assez valientes para tomarlos"
         />
 
         {/* Feature cards grid */}

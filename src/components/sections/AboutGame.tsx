@@ -47,7 +47,7 @@ export function AboutGame() {
         {/* Section Title - medieval styled */}
         <SectionTitle
           title={about.title}
-          subtitle="Discover the story behind the shattered throne"
+          subtitle="Descubre la historia detrás del trono roto"
         />
 
         {/* Content blocks */}
@@ -114,7 +114,7 @@ export function AboutGame() {
               />
             </svg>
             <span className="text-parchment-300 text-sm font-heading tracking-wide">
-              The Age of Shadows Begins
+              La Era de las Sombras Comienza
             </span>
           </div>
         </div>

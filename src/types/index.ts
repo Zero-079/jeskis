@@ -52,7 +52,7 @@ export interface NavItem {
  * Social media link
  */
 export interface SocialLink {
-  platform: 'bluesky' | 'discord' | 'github' | 'x';
+  platform: 'discord' | 'github' | 'instagram';
   url: string;
   iconId: string;
 }
