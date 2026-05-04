@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  /* Medieval Color Palette - Stone grays */
+  --color-stone-950: #0c0a09;
+  --color-stone-900: #1c1917;
+  --color-stone-800: #292524;
+  --color-stone-700: #44403c;
+  --color-stone-600: #57534e;
+  --color-stone-500: #78716c;
+
+  /* Gold/Amber accents */
+  --color-gold-600: #a67c28;
+  --color-gold-500: #c49b38;
+  --color-gold-400: #d4a853;
+  --color-gold-300: #e5c068;
+
+  /* Burgundy/Crimson */
+  --color-burgundy-700: #5a1225;
+  --color-burgundy-600: #721b38;
+  --color-burgundy-500: #8b1a3a;
+  --color-burgundy-400: #a82a4d;
+
+  /* Parchment tones */
+  --color-parchment-100: #fdf6e8;
+  --color-parchment-200: #f9edd4;
+  --color-parchment-300: #f5e6c8;
+  --color-parchment-400: #d4c4a0;
+  --color-parchment-500: #b8a878;
+
+  /* Custom fonts */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Cinzel', serif;
+
+  /* Custom animations */
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px var(--color-gold-500), 0 0 10px var(--color-gold-500);
+  }
+  to {
+    box-shadow: 0 0 10px var(--color-gold-400), 0 0 20px var(--color-gold-400), 0 0 30px var(--color-gold-400);
+  }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-stone-900);
+  color: var(--color-parchment-200);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-burgundy-500);
+  color: var(--color-parchment-100);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-stone-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-700);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy-500);
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 2px;
+}
+
+/* Utility classes for medieval styling */
+.text-shadow-gold {
+  text-shadow: 0 0 20px rgba(212, 168, 83, 0.3);
+}
+
+.border-ornate {
+  border-image: linear-gradient(
+    to right,
+    var(--color-burgundy-500),
+    var(--color-gold-400),
+    var(--color-burgundy-500)
+  ) 1;
+}
+
+.gradient-medieval {
+  background: linear-gradient(
+    180deg,
+    var(--color-stone-950) 0%,
+    var(--color-stone-900) 50%,
+    var(--color-stone-800) 100%
+  );
+}
+
+.gradient-hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(139, 26, 58, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(166, 124, 40, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, var(--color-stone-950) 0%, var(--color-stone-900) 60%, var(--color-stone-800) 100%);
+}
